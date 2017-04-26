@@ -1,6 +1,7 @@
 package com.example;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Map;
 
@@ -10,10 +11,15 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class APIRequest {
 
+    @JsonProperty
     String id;
+    @JsonProperty
     String timestamp;
+    @JsonProperty
     String lang;
+    @JsonProperty
     Result result;
+    @JsonProperty
     Map<String,String> parameters;
 
     @Override
@@ -30,8 +36,12 @@ public class APIRequest {
 }
 
 class Result{
+    @JsonProperty
     String source;
+    @JsonProperty
     String resolvedQuery;
+
+    @JsonProperty
     String action;
 
     @Override
