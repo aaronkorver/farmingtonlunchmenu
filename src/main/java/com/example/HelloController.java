@@ -1,9 +1,6 @@
 package com.example;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 /**
  * Created by Korver on 4/25/2017.
