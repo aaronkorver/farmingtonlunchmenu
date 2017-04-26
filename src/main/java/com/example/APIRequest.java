@@ -2,9 +2,8 @@ package com.example;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
 
-import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Korver on 4/25/2017.
@@ -21,7 +20,7 @@ public class APIRequest {
     @JsonProperty
     Result result;
     @JsonProperty
-    List<JsonNode> parameters;
+    Parameters parameters;
 
     @Override
     public String toString() {
@@ -51,6 +50,19 @@ class Result{
         sb.append("source='").append(source).append('\'');
         sb.append(", resolvedQuery='").append(resolvedQuery).append('\'');
         sb.append(", action='").append(action).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+}
+
+class Parameters{
+    @JsonProperty
+    Map<String,String> values;
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Parameters{");
+        sb.append("values=").append(values);
         sb.append('}');
         return sb.toString();
     }
